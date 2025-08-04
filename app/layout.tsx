@@ -1,8 +1,12 @@
 import type {Metadata} from "next";
 import "./globals.css";
 import localFont from "next/font/local";
+import {SessionProvider} from "next-auth/react";
+import {Toaster} from "sonner";
 
+import {auth} from "@/auth";
 import {ThemeProvider} from "@/context/Themes";
+
 
 
 const inter = localFont({
@@ -21,20 +25,25 @@ export const metadata: Metadata = {
     description: "Get your bug related queries sorted out here",
 };
 
-export default function RootLayout({
-                                       children,
-                                   }: Readonly<{
+const RootLayout = async ({
+                              children,
+                          }: Readonly<{
     children: React.ReactNode;
-}>) {
+}>) => {
+    const session = await auth();
     return (
         <html lang="en" suppressHydrationWarning>
-        <body
-            className={`${inter.className} ${spaceGrotesk.variable} antialiased`}
-        >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-            {children}
-        </ThemeProvider>
-        </body>
+        <SessionProvider session={session}>
+            <body
+                className={`${inter.className} ${spaceGrotesk.variable} antialiased`}
+            >
+            <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+                {children}
+            </ThemeProvider>
+            <Toaster richColors/>
+            </body>
+        </SessionProvider>
         </html>
     );
 }
+export default RootLayout;
