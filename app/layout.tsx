@@ -2,7 +2,6 @@ import type {Metadata} from "next";
 import "./globals.css";
 import localFont from "next/font/local";
 
-import Navbar from "@/components/Navigation/Navbar/Navbar";
 import {ThemeProvider} from "@/context/Themes";
 
 
@@ -33,7 +32,6 @@ export default function RootLayout({
             className={`${inter.className} ${spaceGrotesk.variable} antialiased`}
         >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-            <Navbar/>
             {children}
         </ThemeProvider>
         </body>
