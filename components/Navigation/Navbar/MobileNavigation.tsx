@@ -29,12 +29,13 @@ const MobileNavigation = async () => {
                 className="background-light900_dark200 border-none "
             >
                 <SheetTitle className="hidden">Navigation</SheetTitle>
-                <Link href="/" className="flex items-center gap-1">
+                <Link href="/" className="flex items-center gap-1 pt-4 px-4">
                     <Image
                         src="/images/site-logo.svg"
-                        width={23}
-                        height={23}
+                        width={36}
+                        height={36}
                         alt="Logo"
+                        className="dark:brightness-0 dark:invert"
                     />
 
                     <p className="h2-bold font-space-grotesk text-dark-100 dark:text-light-900">
