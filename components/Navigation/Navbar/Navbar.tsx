@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from 'react';
 
+import MobileNavigation from "@/components/Navigation/Navbar/MobileNavigation";
 import Theme from "@/components/Navigation/Navbar/Theme";
 
 const Navbar = () => {
@@ -11,7 +12,7 @@ const Navbar = () => {
             <Link href="/" className="flex items-center gap-1">
                 <Image src="/images/site-logo.svg"
                        alt="site-logo"
-                        className="dark:brightness-0 dark:invert"
+                       className="dark:brightness-0 dark:invert"
                        width={32} height={32}
                 />
                 <p className="h2-bold font-space-grotesk text-white-100  max-sm:hidden">
@@ -21,7 +22,9 @@ const Navbar = () => {
             <p>
                 Global Search
             </p>
-            <div className="flex-between gap-5"><Theme/></div>
+            <div className="flex-between gap-5 "><Theme/>
+                <MobileNavigation/>
+            </div>
         </nav>
     );
 };
