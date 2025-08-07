@@ -33,7 +33,7 @@ const RootLayout = async ({
     const session = await auth();
     return (
         <html lang="en" suppressHydrationWarning>
-        <SessionProvider session={session}>
+        <SessionProvider session={session                                                                                                                                                                                                                                                                                                                                                                                                                                                                   }>
             <body
                 className={`${inter.className} ${spaceGrotesk.variable} antialiased`}
             >
