@@ -1,12 +1,13 @@
+// eslint-disable-next-line import/order
+import {auth} from "@/auth";
+// eslint-disable-next-line import/order
+import {ThemeProvider} from "@/context/Themes";
+
 import type {Metadata} from "next";
 import "./globals.css";
 import localFont from "next/font/local";
 import {SessionProvider} from "next-auth/react";
 import {Toaster} from "sonner";
-
-import {auth} from "@/auth";
-import {ThemeProvider} from "@/context/Themes";
-
 
 
 const inter = localFont({
@@ -33,7 +34,11 @@ const RootLayout = async ({
     const session = await auth();
     return (
         <html lang="en" suppressHydrationWarning>
-        <SessionProvider session={session                                                                                                                                                                                                                                                                                                                                                                                                                                                                   }>
+        <head>
+            <link rel="stylesheet" type='text/css'
+                  href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"/>
+        </head>
+        <SessionProvider session={session}>
             <body
                 className={`${inter.className} ${spaceGrotesk.variable} antialiased`}
             >

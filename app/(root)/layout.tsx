@@ -2,6 +2,7 @@ import React, {ReactNode} from 'react';
 
 import LeftSidebar from "@/components/Navigation/LeftSidebar";
 import Navbar from "@/components/Navigation/Navbar/Navbar";
+import RightSidebar from "@/components/Navigation/RightSidebar";
 
 const RootLayout = ({children}: { children: ReactNode }) => {
     return (
@@ -14,6 +15,7 @@ const RootLayout = ({children}: { children: ReactNode }) => {
                         {children}
                     </div>
                 </section>
+                <RightSidebar/>
             </div>
         </main>
     );
