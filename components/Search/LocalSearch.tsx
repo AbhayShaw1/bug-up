@@ -22,8 +22,8 @@ const LocalSearch = ({imgSrc, placeholder, route, otherClasses}: LocalSearchProp
     const searchParams = useSearchParams();
     const query = searchParams.get('query') || "";
     const [searchQuery, setSearchQuery] = useState(query);
+    const delayedDebounce = setTimeout(() => {
 
-    useEffect(() => {
         if (searchQuery) {
             const newUrl = formUrlQuery({
                 params: searchParams.toString(),
@@ -38,6 +38,12 @@ const LocalSearch = ({imgSrc, placeholder, route, otherClasses}: LocalSearchProp
             }
 
         }
+
+    }, 300);
+
+    useEffect(() => {
+
+        return clearTimeout(delayedDebounce);
     }, [searchQuery, route, router, searchParams, pathname]);
 
     return (
