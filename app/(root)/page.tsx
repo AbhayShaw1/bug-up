@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import LocalSearch from "@/components/Search/LocalSearch";
 import {Button} from "@/components/ui/button";
 import ROUTES from "@/constants/routes";
 
@@ -17,7 +18,7 @@ const Home = async () => {
                 </Button>
             </section>
             <section className="mt-11">
-                LocalSearch
+               <LocalSearch imgSrc="/icons/search.svg" placeholder="Search questions..." otherClasses="flex-1" route="/"/>
             </section>
             HomeFilter
             <div className="mt-10 flex w-full gap-6 flex-col">
