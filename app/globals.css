@@ -254,10 +254,10 @@ body {
     @apply shadow-light-100 dark:shadow-none;
 }
 
-@utility primary-gradient {
-    background: linear-gradient(129deg, #ff7000 0%, #e2995f 100%);
-}
 
+@utility primary-gradient {
+    background: linear-gradient(129deg, #386641 0%, #4a7c59 100%);
+}
 @utility dark-gradient {
     background: linear-gradient(
             232deg,
@@ -275,7 +275,7 @@ body {
 }
 
 @utility primary-text-gradient {
-    background: linear-gradient(129deg, #ff7000 0%, #e2995f 100%);
+    background:  linear-gradient(129deg, #386641 0%, #4a7c59 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -408,7 +408,7 @@ code {
     hyphens: auto;
 
     padding: 2px;
-    color: #ff7000 !important;
+    color: #386641 !important;
 }
 
 .markdown pre {
