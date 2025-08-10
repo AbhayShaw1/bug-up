@@ -10,7 +10,7 @@ interface TagProps {
     _id: string,
     name: string,
     showCount?: boolean,
-    questions: number,
+    questions?: number,
     compact?: boolean
 }
 

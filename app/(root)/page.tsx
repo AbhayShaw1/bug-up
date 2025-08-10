@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import QuestionCard from "@/components/Cards/QuestionCard";
 import HomeFilter from "@/components/Filters/HomeFilter";
 import LocalSearch from "@/components/Search/LocalSearch";
 import {Button} from "@/components/ui/button";
@@ -19,7 +20,7 @@ const questions = [
             {_id: "1", name: "React"},
             {_id: "2", name: "JavaScript"}
         ],
-        author: {_id: "1", name: "Batman"},
+        author: {_id: "1", name: "Batman",image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoFRQjM-wM_nXMA03AGDXgJK3VeX7vtD3ctA&s"},
         upvotes: 10,
         answers: 5,
         views: 100,
@@ -33,7 +34,7 @@ const questions = [
             {_id: "3", name: "MongoDB"},
             {_id: "4", name: "Database"}
         ],
-        author: {_id: "2", name: "Iron Man"},
+        author: {_id: "2", name: "Iron Man",image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoFRQjM-wM_nXMA03AGDXgJK3VeX7vtD3ctA&s"},
         upvotes: 7,
         answers: 3,
         views: 75,
@@ -47,7 +48,7 @@ const questions = [
             {_id: "5", name: "Docker"},
             {_id: "6", name: "DevOps"}
         ],
-        author: {_id: "3", name: "Wonder Woman"},
+        author: {_id: "3", name: "Wonder Woman",image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoFRQjM-wM_nXMA03AGDXgJK3VeX7vtD3ctA&s"},
         upvotes: 12,
         answers: 4,
         views: 150,
@@ -79,7 +80,7 @@ const Home = async ({searchParams}: HomeProps) => {
             </section>
             <HomeFilter/>
             <div className="mt-10 flex w-full gap-6 flex-col">
-                {filteredQuestions.map(question => <h1 key={question._id}>{question.title}</h1>)}
+                {filteredQuestions.map(question =>      <QuestionCard key={question._id} question={question} />)}
             </div>
         </>
     );
